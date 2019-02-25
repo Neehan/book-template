@@ -43,7 +43,7 @@ more blah more blah
 c+d
 ```
 
-`\[a+b\]` is considered as a separate paragraph, as a result, there is some extra space between first line and a+b. It is quite noticable and rather assymetric. This is different from "vanilla" LaTeX where the output would have been
+`\[a+b\]` is considered a separate paragraph. consequently, there is some extra space between first line and a+b. It is quite noticable and rather assymetric. This is different from "vanilla" LaTeX where the output would have been
 
 ```
 blah blah blah
