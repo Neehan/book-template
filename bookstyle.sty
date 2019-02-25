@@ -50,11 +50,11 @@
 
 % hyperlinks
 \RequirePackage[colorlinks=false, 
-				bookmarksopen=true, 
-				hidelinks, 
-				unicode, 
-				naturalnames
-			   ]{hyperref}
+                bookmarksopen=true, 
+                hidelinks, 
+                unicode, 
+                naturalnames
+               ]{hyperref}
 
 % URL font is latex default Latin Modern Teletype. If you don't like that
 % change it to something else.
@@ -167,18 +167,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % new font for quotation
 \newfontfamily\quotefont[%
- 	Scale= 1.1,
+    Scale= 1.1,
     WordSpace=1.4,
- 	AutoFakeSlant=1.2,
- 	AutoFakeBold=1.2
- 	]{[Monotype Corsiva]}
+    AutoFakeSlant=1.2,
+    AutoFakeBold=1.2
+    ]{[Monotype Corsiva]}
 
 % a chapquote environment for chapter quotes
 \newenvironment{chapquote}[2][2em]
 {\setlength{\@tempdima}{#1}%
-	\def\chapquote@author{#2}%
-	\parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-	\uccoff\quotefont
+    \def\chapquote@author{#2}%
+    \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+    \uccoff\quotefont
 }
 {\par\hfill―\ \uccon\chapquote@author\hspace*{\@tempdima}\par\bigskip}
 
@@ -204,40 +204,40 @@
 
 % nije koro box
 \newtcolorbox{diybox}{%
-	tikznode boxed title,
-	freelance,
-	breakable,
-	enlargepage flexible=\baselineskip,
-	arc=1mm,
-	left=4pt, right=4pt, bottom=4pt,
-	colframe=black,
-	colback=white,
-	boxrule=0.7pt,
-	interior style={white},
-	attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
-	fonttitle=\bfseries,
-	colbacktitle=white,coltitle=black,
-	boxed title style={size=normal,colframe=white,boxrule=0pt},
-	before skip=8pt plus 2pt minus 4pt,
-	title={নিজে করো}}
+    tikznode boxed title,
+    freelance,
+    breakable,
+    enlargepage flexible=\baselineskip,
+    arc=1mm,
+    left=4pt, right=4pt, bottom=4pt,
+    colframe=black,
+    colback=white,
+    boxrule=0.7pt,
+    interior style={white},
+    attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
+    fonttitle=\bfseries,
+    colbacktitle=white,coltitle=black,
+    boxed title style={size=normal,colframe=white,boxrule=0pt},
+    before skip=8pt plus 2pt minus 4pt,
+    title={নিজে করো}}
 
 % mone rakhbe box
 % there is an optional parameter, when provided, replaces "mone rakhbe"
 \newtcolorbox{theorem}[1][মনে রাখবে]{%
-	freelance,
-	breakable,
-	enlargepage flexible=\baselineskip,
-	arc=1mm,
-	left=3pt, right=3pt, bottom=2pt, top=8pt,
-	colframe=black,
-	boxrule=0.7pt,
-	colback=white,
-	attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
-	fonttitle=\bfseries,
-	colbacktitle=white,coltitle=black,
-	title={#1},
-	before skip=8pt plus 2pt minus 4pt,
-	boxed title style={size=fbox, colback=white, freelance,boxrule=0.7pt,colframe=black,frame code={ \path[tcb fill frame] ([xshift=-2mm]frame.west) -- (frame.north west) -- (frame.north east) -- ([xshift=2mm]frame.east)-- (frame.south east) -- (frame.south west) -- cycle; },
+    freelance,
+    breakable,
+    enlargepage flexible=\baselineskip,
+    arc=1mm,
+    left=3pt, right=3pt, bottom=2pt, top=8pt,
+    colframe=black,
+    boxrule=0.7pt,
+    colback=white,
+    attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
+    fonttitle=\bfseries,
+    colbacktitle=white,coltitle=black,
+    title={#1},
+    before skip=8pt plus 2pt minus 4pt,
+    boxed title style={size=fbox, colback=white, freelance,boxrule=0.7pt,colframe=black,frame code={ \path[tcb fill frame] ([xshift=-2mm]frame.west) -- (frame.north west) -- (frame.north east) -- ([xshift=2mm]frame.east)-- (frame.south east) -- (frame.south west) -- cycle; },
     interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)-- (interior.north west) -- (interior.north east)-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)-- cycle;}}
     }
 
@@ -245,23 +245,23 @@
 % use \begin{example}[label=blah]...\end{example} to call \autoref{blah}.
 \newcounter{example}[chapter]
 \newtcolorbox[use counter=example, number freestyle={\noexpand\thechapter.\noexpand\tobangla{\tcbcounter}}]{example}[1][]{
-	colback=white,
-	colframe=black,%gray!80,
-	fonttitle=\bfseries,
-	colbacktitle=white,%gray!40,
-	arc=1mm,
-	top=8pt, left=3pt, right=3pt, bottom=2pt,
-	coltitle=black,
-	boxrule=0.7pt,
-	freelance,
-	breakable,
-	enlargepage flexible=\baselineskip,
-	before skip=8pt plus 2pt minus 2pt,
-	after skip=4pt plus 2pt minus 0pt,
-	attach boxed title to top left={yshift=-9pt,xshift=6pt},
-	boxed title style={size=fbox,boxrule=0.7pt,colframe=black, arc=1mm},
-	title={উদাহরণ \thetcbcounter},
-	#1
+    colback=white,
+    colframe=black,%gray!80,
+    fonttitle=\bfseries,
+    colbacktitle=white,%gray!40,
+    arc=1mm,
+    top=8pt, left=3pt, right=3pt, bottom=2pt,
+    coltitle=black,
+    boxrule=0.7pt,
+    freelance,
+    breakable,
+    enlargepage flexible=\baselineskip,
+    before skip=8pt plus 2pt minus 2pt,
+    after skip=4pt plus 2pt minus 0pt,
+    attach boxed title to top left={yshift=-9pt,xshift=6pt},
+    boxed title style={size=fbox,boxrule=0.7pt,colframe=black, arc=1mm},
+    title={উদাহরণ \thetcbcounter},
+    #1
 }
 
 

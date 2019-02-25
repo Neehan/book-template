@@ -42,48 +42,48 @@
 
 \def\@@Kalpurush{Kalpurush}
 \def\@Kalpurush#1{
-	\ifcase#1{Kalpurush}    % name
-	\or{MatchLowercase}     % Scale
-	\or{1.1}                % main WordSpace
-	\or{1.5}                % tt WordSpace
-	\else\fi
+    \ifcase#1{Kalpurush}    % name
+    \or{MatchLowercase}     % Scale
+    \or{1.1}                % main WordSpace
+    \or{1.5}                % tt WordSpace
+    \else\fi
 }
 
 \def\@@SiyamRupali{SiyamRupali}
 \def\@SiyamRupali#1{
-	\ifcase#1{SiyamRupali}  % name
-	\or{0.8}                % Scale
-	\or{1.2}                % main WordSpace
-	\or{1.8}                % tt WordSpace
-	\else\fi
+    \ifcase#1{SiyamRupali}  % name
+    \or{0.8}                % Scale
+    \or{1.2}                % main WordSpace
+    \or{1.8}                % tt WordSpace
+    \else\fi
 }
 
 \def\@@SolaimanLipi{SolaimanLipi}
 \def\@SolaimanLipi#1{
-	\ifcase#1{SolaimanLipi} % name
-	\or{0.89}               % Scale
-	\or{1.5}                % main WordSpace
-	\or{2.1}                % tt WordSpace
-	\else\fi
+    \ifcase#1{SolaimanLipi} % name
+    \or{0.89}               % Scale
+    \or{1.5}                % main WordSpace
+    \or{2.1}                % tt WordSpace
+    \else\fi
 }
 
 % package options
 \DeclareOptionX{banglamainfont}{%
-	\if\relax\detokenize{#1}\relax
-		\errmessage{Bangla main font not defined}
-	\else
-		\def\bm@name{#1}
-		\def\bm@@name{bmfont}
-		\bm@init{\bm@name}
+    \if\relax\detokenize{#1}\relax
+        \errmessage{Bangla main font not defined}
+    \else
+        \def\bm@name{#1}
+        \def\bm@@name{bmfont}
+        \bm@init{\bm@name}
     \fi
 }
 \DeclareOptionX{banglattfont}{%
-	\if\relax\detokenize{#1}\relax
-		\errmessage{Bangla tt font not defined}
-	\else
-		\def\btt@name{#1}
-		\def\btt@@name{bttfont}
-		\btt@init{\btt@name}
+    \if\relax\detokenize{#1}\relax
+        \errmessage{Bangla tt font not defined}
+    \else
+        \def\btt@name{#1}
+        \def\btt@@name{bttfont}
+        \btt@init{\btt@name}
     \fi
 }
 
@@ -91,51 +91,51 @@
 \newif\ifchange@num
 \change@numtrue
 \DeclareOptionX{changecounternumbering}{
-	\if\relax\detokenize{#1}\relax\fi
-	\ifcase#1\change@numfalse\fi
+    \if\relax\detokenize{#1}\relax\fi
+    \ifcase#1\change@numfalse\fi
 }
 
 % set bangla main font with given settings
 \def\bm@init#1{%
-	% if Kalpurush
-	\ifx#1\@@Kalpurush%
-    	\def\bm@scale{\@Kalpurush{1}}%
-    	\def\bm@wordspace{\@Kalpurush{2}}%
-	% else if SiyamRupali
-	\else\ifx#1\@@SiyamRupali%
-    	\def\bm@scale{\@SiyamRupali{1}}%
-    	\def\bm@wordspace{\@SiyamRupali{2}}%
+    % if Kalpurush
+    \ifx#1\@@Kalpurush%
+        \def\bm@scale{\@Kalpurush{1}}%
+        \def\bm@wordspace{\@Kalpurush{2}}%
+    % else if SiyamRupali
+    \else\ifx#1\@@SiyamRupali%
+        \def\bm@scale{\@SiyamRupali{1}}%
+        \def\bm@wordspace{\@SiyamRupali{2}}%
     % else if SolaimanLipi
     \else\ifx#1\@@SolaimanLipi%
-    	\def\bm@scale{\@SolaimanLipi{1}}%
-    	\def\bm@wordspace{\@SolaimanLipi{2}}%
-	% else, my best bet is MatchLowercase with Latin,
-	% but that does not quite work all the time
-	\else
-	    \def\bm@scale{MatchLowercase}%
-    	\def\bm@wordspace{1}%
+        \def\bm@scale{\@SolaimanLipi{1}}%
+        \def\bm@wordspace{\@SolaimanLipi{2}}%
+    % else, my best bet is MatchLowercase with Latin,
+    % but that does not quite work all the time
+    \else
+        \def\bm@scale{MatchLowercase}%
+        \def\bm@wordspace{1}%
     \fi\fi\fi%
 }
 
 % set bangla tt font with given settings
 \def\btt@init#1{%
-	% if Kalpurush
-	\ifx#1\@@Kalpurush%
-    	\def\btt@scale{\@Kalpurush{1}}%
-    	\def\btt@wordspace{\@Kalpurush{3}}%
-	% else if SiyamRupali
-	\else\ifx#1\@@SiyamRupali%
-    	\def\btt@scale{\@SiyamRupali{1}}%
-    	\def\btt@wordspace{\@SiyamRupali{3}}%
+    % if Kalpurush
+    \ifx#1\@@Kalpurush%
+        \def\btt@scale{\@Kalpurush{1}}%
+        \def\btt@wordspace{\@Kalpurush{3}}%
+    % else if SiyamRupali
+    \else\ifx#1\@@SiyamRupali%
+        \def\btt@scale{\@SiyamRupali{1}}%
+        \def\btt@wordspace{\@SiyamRupali{3}}%
     % else if SolaimanLipi
     \else\ifx#1\@@SolaimanLipi%
-    	\def\btt@scale{\@SolaimanLipi{1}}%
-    	\def\btt@wordspace{\@SolaimanLipi{3}}%
-	% else, my best bet is MatchLowercase with Latin,
-	% but that does not quite work all the time
-	\else%
-		\def\btt@scale{MatchLowercase}%
-    	\def\btt@wordspace{1.2}%
+        \def\btt@scale{\@SolaimanLipi{1}}%
+        \def\btt@wordspace{\@SolaimanLipi{3}}%
+    % else, my best bet is MatchLowercase with Latin,
+    % but that does not quite work all the time
+    \else%
+        \def\btt@scale{MatchLowercase}%
+        \def\btt@wordspace{1.2}%
     \fi\fi\fi%
 }
 
@@ -143,30 +143,30 @@
 
 % Polyglossia settings
 \ifchange@num
-	\setmainlanguage[changecounternumbering=false]{bengali}
+    \setmainlanguage[changecounternumbering=false]{bengali}
 \else
-	\setmainlanguage{bengali}
+    \setmainlanguage{bengali}
 \fi
 
 % define fontfamilies to be used by polyglossia
 % Note: you can change the level of boldness and slant
 \newfontfamily\bengalifont[%
-	Script=Bengali,%
-	Scale=\bm@scale,%
-	NFSSFamily=\bm@@name,%
-	WordSpace=\bm@wordspace,%
-	AutoFakeSlant=0.15,
-	AutoFakeBold=2.5
-	]{[\bm@name]}
+    Script=Bengali,%
+    Scale=\bm@scale,%
+    NFSSFamily=\bm@@name,%
+    WordSpace=\bm@wordspace,%
+    AutoFakeSlant=0.15,
+    AutoFakeBold=2.5
+    ]{[\bm@name]}
 
 \newfontfamily\bengalifonttt[%
-	Script=Bengali,%
-	Scale=\btt@scale,%
-	NFSSFamily=\btt@@name,
-	WordSpace=\btt@wordspace,%
-	AutoFakeSlant=0.15,
-	AutoFakeBold=2.5
-	]{[\btt@name]}
+    Script=Bengali,%
+    Scale=\btt@scale,%
+    NFSSFamily=\btt@@name,
+    WordSpace=\btt@wordspace,%
+    AutoFakeSlant=0.15,
+    AutoFakeBold=2.5
+    ]{[\btt@name]}
 
 
 % ----   -----    -----    ----
@@ -212,7 +212,7 @@
 
 % correct captions in polyglossia
 \addto\captionsbengali{\renewcommand\abstractname{সারসংক্ষেপ}}
-\addto\captionsbengali{\renewcommand\bibname{\bfseries গ্রন্থসূত্র}}
+\addto\captionsbengali{\renewcommand\bibname{গ্রন্থসূত্র}}
 \addto\captionsbengali{\renewcommand{\figurename}{চিত্র}}
 
 
