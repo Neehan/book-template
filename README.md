@@ -3,7 +3,7 @@
 This is the template I wrote for the book *কম্বিনেটরিকসে হাতেখড়ি* (Introduction to Combinatorics). This is the first Bengali book created with LaTeXbangla, a package I also wrote some years ago. I hope the style files will assist prospective authors to produce high quality Bangla books in future. 
 
 ## Build Instructions
-**Fonts:** You'll need `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to distribute them. So, you have to install them separately. The output was somewhat different when the fonts were globally installed vs when the font files were placed in the root directory. I don't know the underlying cause. If your output does not match with `main.pdf`, try the other method. Note that, if you put the font files in the root directory, the file names have to be same as the names above. (For instance, the file for Kalpurush must be named `Kalpurush.ttf`)
+**Fonts:** You'll need `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to distribute them. So, you have to install them separately. The output was somewhat different when the fonts were globally installed vs when the font files were placed in the root directory. I don't know the underlying cause. If your output does not match with `main.pdf`, try the other method. Note that, if you put the font files in the root directory, the file names have to be same as the names above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
 
 **LaTeX:** You must have a LaTeX distribution installed in your system. If you are on Windows, you may install MikTeX. And, if you are on Linux, try TeXWorks. To compile, run `main.tex` with XeLaTeX and BibTeX. In Windows, the simplest way would be to open `main.tex` with MikTeX's default Editor, called TeXworks, then hit Build with `XeLaTeX+BibTeX+MakeIndex`. 
 
@@ -20,9 +20,9 @@ This is the template I wrote for the book *কম্বিনেটরিকস�
 I have extensively commented in both `bookstyle.sty` and `latexbangla.sty`. They should be pretty easy to read. If not, please raise an issue.
 
 ### General Guidelines
-Your book should be partitioned by chapters. Each chapter should be placed inside `chap` directory, in its own file. Then add the chapter to `main.tex` with `\include` command. Your figures should be placed inside `img` directory. They should also be partitioned by chapters. Lastly, your bibliography should be placed in `bookbib.bib`. 
+Partition your book by chapters. Place every chapter inside `chap` directory, in its own file. Then add the chapters to `main.tex` with `\include` command. Your figures should be placed inside `img` directory. They should also be partitioned by chapters. Lastly, your bibliography should be in `bookbib.bib`. 
 
-**`\parskip` and `\[...\]`:** In LaTeX, two blocks of text separated by a blank line are considered as separate paragraphs. In this template, the extra spacing between paragraphs (unless required for layout) is `4pt`. This causes some unexpected behaviours. Consider this:
+**`\parskip` and `\[...\]`:** In LaTeX, two blocks of text separated by a blank line are considered separate paragraphs. In this template, the extra spacing between paragraphs (unless required for layout) is `4pt`. This causes some unexpected behaviours. Consider the following example:
 
 ```
 blah blah blah
@@ -33,7 +33,7 @@ more blah more blah
 \[c+d\]
 ```
 
-The output will look like this:
+The output will look like:
 
 ```
 blah blah blah
@@ -43,7 +43,7 @@ more blah more blah
 c+d
 ```
 
-`\[a+b\]` is considered a separate paragraph. consequently, there is some extra space between first line and a+b. It is quite noticable and rather assymetric. This is different from "vanilla" LaTeX where the output would have been
+`\[a+b\]` is considered a separate paragraph. Consequently, there is some extra space between first line and a+b. It is quite noticable and rather assymetric. This is different from "vanilla" LaTeX where the output would have been
 
 ```
 blah blah blah
@@ -51,7 +51,7 @@ a + b
 more blah more blah
 c+d
 ```
-because of no extra spacing between paragraphs. Please keep it in mind that all the displaystyle environments, such as `equation`, `aligned*`, `split` etc. will also be affected. The solution is very simple: don't put an empty line between text and displaymath environment.
+because of no extra spacing between paragraphs. Please keep it in mind that all the displaystyle environments, such as `equation`, `aligned*`, `split` etc. will be affected. The solution is very simple: don't put an empty line between text and displaystyle environment.
 
 ```
 blah blah blah
