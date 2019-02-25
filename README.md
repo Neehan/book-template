@@ -51,7 +51,15 @@ a + b
 more blah more blah
 c+d
 ```
-because of no extra spacing between paragraphs. Please keep it in mind that all the displaystyle environments, such as `equation`, `aligned*`, `split` etc. will also be affected.
+because of no extra spacing between paragraphs. Please keep it in mind that all the displaystyle environments, such as `equation`, `aligned*`, `split` etc. will also be affected. The solution is very simple: don't put an empty line between text and displaymath environment.
+
+```
+blah blah blah
+\[a + b\]
+more blah more blah
+\[c+d\]
+```
+
 
 You may read the source of Pigeonhole Principle for guidance but do not blindly follow its style. See the section below.
 
