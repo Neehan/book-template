@@ -22,6 +22,37 @@ I have extensively commented in both `bookstyle.sty` and `latexbangla.sty`. They
 ### General Guidelines
 Your book should be partitioned by chapters. Each chapter should be placed inside `chap` directory, in its own file. Then add the chapter to `main.tex` with `\include` command. Your figures should be placed inside `img` directory. They should also be partitioned by chapters. Lastly, your bibliography should be placed in `bookbib.bib`. 
 
+**`\parskip` and `\[...\]`:** In LaTeX, two blocks of text separated by a blank line are considered as separate paragraphs. In this template, the extra spacing between paragraphs (unless required for layout) is `4pt`. This causes some unexpected behaviours. Consider this:
+
+```
+blah blah blah
+
+\[a + b\]
+
+more blah more blah
+\[c+d\]
+```
+
+The output will look like this:
+
+```
+blah blah blah
+
+a + b
+more blah more blah
+c+d
+```
+
+`\[a+b\]` is considered as a separate paragraph, as a result, there is some extra space between first line and a+b. It is quite noticable and rather assymetric. This is different from "vanilla" LaTeX where the output would have been
+
+```
+blah blah blah
+a + b
+more blah more blah
+c+d
+```
+because of no extra spacing between paragraphs. Please keep it in mind that all the displaystyle environments, such as `equation`, `aligned*`, `split` etc. will also be affected.
+
 You may read the source of Pigeonhole Principle for guidance but do not blindly follow its style. See the section below.
 
 ## Things you should NOT follow
