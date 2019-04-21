@@ -1,6 +1,6 @@
 # book-template
 
-This is the template for the book [https://rokomari.com/book/180324/combinatoricse-hatekhori--1st-part](*কম্বিনেটরিকসে হাতেখড়ি* (Introduction to Combinatorics)). It is the first Bengali book created with LaTeXbangla, a package I also wrote some years ago. I hope the style files will assist prospective authors to produce high quality Bangla books in future. 
+This is the template for the book [https://rokomari.com/book/180324/combinatoricse-hatekhori--1st-part](কম্বিনেটরিকসে হাতেখড়ি; Introduction to Combinatorics). It is the first Bengali book created with LaTeXbangla, a package I also wrote some years ago. I hope the style files will assist prospective authors to produce high quality Bangla books in future. 
 
 ## Build Instructions
 **Fonts:** You'll need `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the internet and place the font files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
